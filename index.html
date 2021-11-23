@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Trying a better styling</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+    body {
+      font-family: 'Josefin Sans', sans-serif;
+      margin: 20px auto;
+      max-width: 400px;
+      min-width: 400px;
+    }
+
+    .mainfieldset {
+      padding: 10px 30px 0;
+      border-radius: 5px;
+    }
+
+    .mainfieldset legend {
+      background-color: black;
+      color: white;
+      padding: 3px;
+    }
+
+    .opinionfieldset {
+      padding: 0;
+      margin: 0;
+      border: 0;
+    }
+
+    form button,
+    label,
+    div>input,
+    textarea {
+      font-family: inherit;
+      display: block;
+      font-size: 100%;
+      padding: 0;
+      margin: 5;
+      box-sizing: border-box;
+    }
+
+    form label,
+    div>input,
+    textarea {
+      width: 100%;
+    }
+
+    .mainfieldset>div>input {
+      box-shadow: inset 1px 1px 3px #ccc;
+      padding: 5px 5px;
+    }
+
+    form label {
+      height: 20px;
+    }
+
+    form div>input,
+    button {
+      height: 30px;
+    }
+
+    .required_input input+span {
+      position: relative;
+    }
+
+    .required_input span:before {
+      position: absolute;
+      top: -26px;
+      left: 340px;
+    }
+
+    .required_input input:invalid {
+      border: 2px solid red;
+    }
+
+    .required_input input:invalid+span:before {
+      content: '✖';
+      color: red;
+    }
+
+    .required_input input:valid+span:before {
+      content: '✓';
+      color: green;
+    }
+
+    input[type="radio"] {
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    input[type="radio"] {
+      position: relative;
+      width: 20px;
+      height: 20px;
+      border-radius: 10px;
+      border: 2px solid gray;
+      outline: none;
+    }
+
+    input[type="radio"]:hover {
+      position: relative;
+      width: 20px;
+      height: 20px;
+      border-radius: 10px;
+      border: 2px solid rgb(90, 90, 90);
+      outline: none;
+    }
+
+    input[type="radio"]::before {
+      position: relative;
+      display: block;
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 6px;
+      background-color: red;
+      font-size: 1.2em;
+      transform: translate(3px, 3px) scale(0);
+      transform-origin: center;
+      transition: all 0.3s ease-in;
+    }
+
+    input[type="radio"]:checked::before {
+      transform: translate(3px, 3px) scale(1);
+      transition: all 0.3s cubic-bezier(0.25, 0.25, 0.56, 2);
+    }
+
+    textarea {
+      box-shadow: inset 1px 1px 3px #ccc;
+      font-family: inherit;
+      display: block;
+      font-size: 100%;
+      padding: 5px 5px;
+      margin: 0;
+      box-sizing: border-box;
+      width: 100%;
+    }
+
+    input,
+    textarea {
+      background-color: rgba(128, 128, 128, 0.05);
+      border-width: 2px;
+      border-radius: 5px;
+      border-color: rgb(70, 70, 70);
+    }
+
+    input:hover,
+    textarea:hover {
+      background-color: rgba(128, 128, 128, 0.12);
+      border-width: 2px;
+      border-radius: 5px;
+      border-color: rgb(70, 70, 70);
+    }
+
+    ul {
+      list-style-type: none;
+    }
+
+    div {
+      margin-bottom: 15px;
+    }
+
+    textarea {
+      resize: none;
+    }
+
+    button {
+      width: 60%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .span_usual {
+      color: black;
+    }
+
+    .span_warning {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+
+  <form novalidate>
+    <fieldset class="mainfieldset">
+      <legend>Is this form well formatted?</legend>
+
+      <p>Test to produce a well formatted form, please leave your comment.</p>
+
+      <div class="required_input">
+        <label name="fname">First name:<abbr title="required">*</abbr>
+        </label>
+        <input type="text" id="fname" name="fname" required minlength="3" maxlength="30">
+        <span></span> <span></span>
+      </div>
+
+      <div class="required_input">
+        <label name="lname">Last name:<abbr title="required" aria-label="required">*</abbr></label>
+        <input type="text" id="lname" name="lname" required minlength="3" maxlength="30">
+        <span></span> <span></span>
+      </div>
+
+      <div>
+        <label name="phonenumber">Phone number:</label>
+        <input type="tel" id="phonenumber" name="phonenumber">
+        <span></span> <span></span>
+      </div>
+
+      <div>
+        <label name="mail">E-mail:</label>
+        <input type="email" id="mail" name="mail" minlength="8">
+        <span></span> <span></span>
+      </div>
+
+      <div>
+        <fieldset class="opinionfieldset">
+          <label>Opinion about the formatting of this form:</label>
+          <p>
+            <label>
+              <input type="radio" id="good" name="opinion" value="good">
+              Well formatted
+            </label>
+          </p>
+
+          <p>
+            <label>
+              <input type="radio" id="good_enough" name="opinion" value="good_enough" checked>
+              Good enough
+            </label>
+          </p>
+
+          <p>
+            <label>
+              <input type="radio" id="bad" name="opinion" value="bad">
+              Bad
+            </label>
+          </p>
+        </fieldset>
+      </div>
+
+      <div>
+        <label for="comment">Comments:</label>
+        <textarea id="comment" name="comment" rows="5" maxlength="220"></textarea>
+      </div>
+
+      <div class="warnings_div">
+      </div>
+
+      <div>
+        <button>Send to the author</button>
+      </div>
+    </fieldset>
+
+    <script>
+      const fname = document.getElementById('fname');
+      const lname = document.getElementById('lname');
+      const mail = document.getElementById('mail');
+      const form = document.getElementsByTagName('form')[0];
+      const fname_warnings_div = document.querySelector('#fname+span+span');
+      const lname_warnings_div = document.querySelector('#lname+span+span');
+      const mail_warnings_div = document.querySelector('#mail+span+span');
+      const warnings_div = document.querySelectorAll('span+span');
+
+      form.addEventListener('submit', function (event) {
+        if (!fname.validity.valid ||
+          !lname.validity.valid ||
+          !mail.validity.valid) {
+          warnings_div.forEach(function (item) {
+            item.className = 'span_warning';
+          });
+          event.preventDefault();
+        }
+      });
+
+      fname.addEventListener('input', function (event) {
+        fname_warnings_div.className = 'span_usual';
+        if (fname.validity.valid) {
+          fname_warnings_div.textContent = '';
+        } else {
+          showfnameError();
+        }
+      });
+
+      lname.addEventListener('input', function (event) {
+        lname_warnings_div.className = 'span_usual';
+        if (lname.validity.valid) {
+          lname_warnings_div.textContent = '';
+        } else {
+          showlnameError();
+        }
+      });
+
+      mail.addEventListener('input', function (event) {
+        mail_warnings_div.className = 'span_usual';
+        if (mail.validity.valid) {
+          mail_warnings_div.textContent = '';
+        } else {
+          showmailError();
+        }
+      });
+
+      function showfnameError() {
+        if (fname.validity.valueMissing) {
+          fname_warnings_div.textContent = 'A name must be informed.';
+        } else if (fname.validity.tooShort) {
+          fname_warnings_div.textContent = 'Name is too short.';
+        }
+      };
+
+      function showlnameError() {
+        if (lname.validity.valueMissing) {
+          lname_warnings_div.textContent = 'A name must be informed.';
+        } else if (lname.validity.tooShort) {
+          lname_warnings_div.textContent = 'Name is too short.';
+        }
+      };
+
+      function showmailError() {
+        if (mail.validity.tooShort) {
+          mail_warnings_div.textContent = 'E-mail is too short.';
+        }
+      };
+
+    </script>
+
+
+    <script>
+      const email = document.getElementById("mail");
+
+      email.addEventListener("input", function (event) {
+        if (email.validity.typeMismatch) {
+          email.setCustomValidity("Estou esperando um endereço de e-mail.");
+        } else {
+          email.setCustomValidity("");
+        }
+      });
+    </script>
+
+</body>
+
+</html>
