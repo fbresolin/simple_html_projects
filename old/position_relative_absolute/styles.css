@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* sem usar position relative a funcao right nao tem valor e o elemento usa a posicao static que posiciona o elemento conforme o fluxo natural do documento */
+
+/* usando a funcao relative as funcoes right, left, top, bottom passam a posicionar o elemento de forma relativa ao elemento na sua posicao dada pela posicao static */
+header {
+  position: relative;
+  right: -50%;
+}
+
+/* position absolute retira o elemento do fluxo natural do documento, com essa funcao ele é posicionado da forma mais próxima ao elemento irmao, ou em relação ao zero do bloco que o contem */
+.div1 {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+}
+
+.div2 {
+  text-align: center;
+  padding: 10px;
+}
+
+.div2::after {
+  content: 'hi';
+}
+
+.div2::before {
+  content: 'hello';
+  position: absolute;
+}

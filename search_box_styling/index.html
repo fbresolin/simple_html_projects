@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Search box</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #fff;
+      color: #333;
+      font-family: sans-serif;
+      text-align: center;
+      align-items: center;
+    }
+
+    input {
+      font-family: sans-serif;
+      margin-top: 15px;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    input:focus {
+      outline-color: rgb(85, 199, 142)
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Incredible search box</h1>
+  <form>
+    <label for="search">Search:</label>
+    <input id="search" name="search" type="search" aria-label="Search our site">
+    <input type="image" formtarget="search" src="search-24px.png" alt="search button" height="15px">
+  </form>
+</body>
+
+</html>

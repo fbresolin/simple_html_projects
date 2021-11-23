@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.showcase {
+  font-family: 'Open Sans', 'sans-serif';
+  color: rgba(0, 0, 0, 0.75);
+  background-image: linear-gradient(
+      to bottom,
+      rgba(245, 246, 252, 0.52),
+      rgba(117, 19, 93, 0.73)
+    ),
+    url('images/header_image.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 0 120px;
+  margin: 0 auto 0;
+  /* float: left; */
+}
+
+.showcase_text {
+  top: 40vh;
+  text-align: center;
+  position: relative;
+  /*margin-top: 100px;*/
+}
+
+.showcase_button {
+  background: rgba(0, 0, 0, 0);
+  border-color: rgba(0, 0, 0, 0.5);
+  margin-top: 60vh;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  width: 10em;
+  height: 3em;
+}
+
+.showcase_button:hover {
+  background: rgba(117, 19, 93, 0.73);
+  color: #fff;
+}
+
+.section_type > * {
+  font-family: 'Open Sans', 'sans-serif';
+  color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 50vh;
+  padding: 0 80px;
+}
+
+.section_type .a {
+  background-color: rgba(83, 10, 65, 0.75);
+}
+
+.section_type .b {
+  background-color: rgba(245, 246, 252, 0.75);
+}
+
+.section_type_b {
+  display: flex;
+}
+
+.section_type_b > * {
+  font-family: 'Open Sans', 'sans-serif';
+  color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  text-align: center;
+  height: 70vh;
+  padding: 0 10px;
+}
+
+.section_type_b .a {
+  background-color: rgba(83, 10, 65, 0.75);
+}
+
+.section_type_b .b {
+  background-color: rgba(245, 246, 252, 0.75);
+}
+
+.image_section > * {
+  font-family: 'Open Sans', 'sans-serif';
+  color: rgba(0, 0, 0, 0.75);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 120px;
+}
+
+.image_section .able {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(117, 19, 93, 0.75),
+      rgba(245, 246, 252, 0.75)
+    ),
+    url('images/able_skyer.jpg');
+  height: 70vh;
+}
+
+.image_section .me_as_skyier {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(245, 246, 252, 0.75),
+      rgba(138, 37, 113, 0.75)
+    ),
+    url('images/me_as_skyier.jpg');
+  height: 130vh;
+}
+
+.image_section .funny_skyier {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(117, 19, 93, 0.73),
+      rgba(245, 246, 252, 0.52)
+    ),
+    url('images/funny_skyier.jpg');
+  height: 90vh;
+}

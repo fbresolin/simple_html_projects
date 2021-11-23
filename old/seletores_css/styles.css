@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+body {
+  width: 400px;
+}
+
+.class1,
+.class2,
+.class3 {
+  border: solid;
+  border-width: 1px;
+  border-width: 1px;
+
+  position: relative;
+  border-color: black;
+}
+
+.class1 {
+  left: 10%;
+}
+.class2 {
+  left: 20%;
+}
+.class3 {
+  left: 30%;
+}
+
+.class1 li + li {
+  margin-top: 15px;
+}
+
+.class2 ul > li {
+  margin-top: 15px;
+}
+
+.class3 ul li {
+  margin-top: 15px;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>From filling webpage</title>
+  <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <h1>This is a simple form filling webpage</h1>
+  </header>
+
+  <main>
+    <form action="/form-handler" method="post">
+      <ul>
+        <li>
+          Tipo de formulário:
+        </li>
+
+        <li>
+          <input type="radio" id="question_doubt" name="question" required>
+          <label for="question_doubt">Dúvida</label>
+        </li>
+
+        <li>
+          <input type="radio" id="question_suggestion" name="question" required>
+          <label for="question_suggestion">Sugestão</label>
+        </li>
+
+        <li>
+          <input type="radio" id="question_reclam" name="question" required>
+          <label for="question_reclam">Reclamação</label>
+        </li>
+
+        <li>
+          <label for="fname">Primeiro nome:</label>
+          <input type="text" id="fname" name="fname" required>
+        </li>
+
+        <li>
+          <label for="sname">Sobrenome:</label>
+          <input type="text" id="sname" name="sname" required>
+        </li>
+
+        <li>
+          <label for="emailv">e-mail:</label>
+          <input type="email" id="emailv" name="emailv" required>
+        </li>
+
+        <li>
+          <label for="message">Mensagem:</label>
+          <textarea id="message" name="message" required>Insira sua mensagem aqui...</textarea>
+        </li>
+
+        <li>
+          <button type="submit">Submeter formulário</button>
+        </li>
+
+      </ul>
+    </form>
+  </main>
+</body>
+
+</html>
