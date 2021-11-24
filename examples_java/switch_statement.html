@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Teste</title>
+  <style>
+    div {
+      padding: 1em;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>This is my cute website</h1>
+
+  <div>
+    <label for='siteColor'>Choose site color</label>
+    <select id='siteColor'>
+      <option value='white'>White</option>
+      <option value='black'>Black</option>
+    </select>
+  </div>
+
+  <div>
+    <label for='weather'>Type of weather:</label>
+    <select id='weather'>
+      <option value=''>Make an option</option>
+      <option value='snowy'>Snowy</option>
+      <option value='sunny'>Sunny</option>
+      <option value='cloudy'>Cloudy</option>
+      <option value='windy'>Windy</option>
+    </select>
+  </div>
+
+  <p id='paragraph'></p>
+</body>
+
+<script>
+  var paragraph = document.querySelector('p');
+  var select = document.getElementById('weather');
+  var siteColor = document.getElementById('siteColor');
+  var html = document.querySelector('html')
+
+  select.addEventListener('change', selectParagraph)
+
+  function selectParagraph() {
+    var choice = select.value;
+
+    switch (choice) {
+      case 'snowy':
+        paragraph.textContent = 'Put a coat NOW!';
+        break;
+
+      case 'sunny':
+        paragraph.textContent = 'Go outside, but do not get burned...';
+        break;
+
+      case 'cloudy':
+        paragraph.textContent = 'Enjoy the shade...';
+        break;
+
+      case 'windy':
+        paragraph.textContent = 'Put a coat, but a light one.';
+        break;
+
+      default:
+        paragraph.textContent = '';
+        break;
+    }
+  }
+
+  function updateSiteColor(backgroundColor, textColor) {
+    html.style.backgroundColor = backgroundColor;
+    html.style.color = textColor;
+  }
+
+  siteColor.onchange = function () {
+    (siteColor.value == 'black') ? updateSiteColor('black', 'white') : updateSiteColor('white', 'black');
+  }
+
+</script>
+
+</html>
