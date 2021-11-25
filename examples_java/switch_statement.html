@@ -18,6 +18,8 @@
     <select id='siteColor'>
       <option value='white'>White</option>
       <option value='black'>Black</option>
+      <option value='gray'>Gray</option>
+      <option value='violet'>Violet</option>
     </select>
   </div>
 
@@ -41,9 +43,7 @@
   var siteColor = document.getElementById('siteColor');
   var html = document.querySelector('html')
 
-  select.addEventListener('change', selectParagraph)
-
-  function selectParagraph() {
+  select.addEventListener('change', function () {
     var choice = select.value;
 
     switch (choice) {
@@ -67,16 +67,34 @@
         paragraph.textContent = '';
         break;
     }
-  }
+  })
 
-  function updateSiteColor(backgroundColor, textColor) {
-    html.style.backgroundColor = backgroundColor;
-    html.style.color = textColor;
-  }
+  siteColor.addEventListener('change', function () {
+    choice = siteColor.value;
 
-  siteColor.onchange = function () {
-    (siteColor.value == 'black') ? updateSiteColor('black', 'white') : updateSiteColor('white', 'black');
-  }
+    switch (choice) {
+      case 'white':
+        html.style.backgroundColor = 'white';
+        html.style.color = 'black';
+        break;
+      case 'black':
+        html.style.backgroundColor = 'black';
+        html.style.color = 'white';
+        break;
+      case 'gray':
+        html.style.backgroundColor = 'gray';
+        html.style.color = 'white';
+        break;
+      case 'violet':
+        html.style.backgroundColor = 'violet';
+        html.style.color = 'white';
+        break;
+      default:
+        html.style.backgroundColor = 'white';
+        html.style.color = 'black';
+        break;
+    }
+  })
 
 </script>
 
