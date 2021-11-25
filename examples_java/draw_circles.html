@@ -18,7 +18,8 @@
   buttonGen.onclick = generateCircles;
 
   function changeBackgroundColor() {
-    html.style.backgroundColor = `rgb(
+    canvas = document.querySelector('canvas');
+    canvas.style.backgroundColor = `rgb(
         ${255 * Math.random()},
         ${255 * Math.random()},
         ${255 * Math.random()})`;
@@ -54,7 +55,6 @@
     canvas = document.querySelector('canvas');
     if (canvas) {
       clearInterval(globalThis.timer);
-      html.style.backgroundColor = 'white';
       html.removeChild(canvas);
     }
   }
